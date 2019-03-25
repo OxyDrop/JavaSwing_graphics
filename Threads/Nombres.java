@@ -9,11 +9,14 @@ package Threads;
  *
  * @author Acer
  */
-public class Nombres {
+public class Nombres 
+{
 	private boolean pret = false;
 	private int n=1,carre;
-	public synchronized void calcul() throws InterruptedException{
-		if(!pret){
+	public synchronized void calcul() throws InterruptedException
+	{
+		if(!pret)
+		{
 			n++;
 			carre=n*n;
 			pret=true;
@@ -23,9 +26,11 @@ public class Nombres {
 			wait();
 			
 	}
-	public synchronized void affiche(){
+	public synchronized void affiche()
+	{
 		try{
-			if(pret){
+			if(pret)
+			{
 				System.out.println(n+" a pour carre "+carre);
 				notifyAll();
 				pret=false;
@@ -33,7 +38,8 @@ public class Nombres {
 			else wait();
 		}catch(InterruptedException e){}
 	}
-	public boolean pret(){
+	public boolean pret()
+	{
 		return pret;
 	}
 }

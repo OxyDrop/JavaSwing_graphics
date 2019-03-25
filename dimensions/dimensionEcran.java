@@ -10,7 +10,8 @@ public class dimensionEcran {
 }
 class maFenetre extends JFrame{
 	maFenetre(){
-		setTitle("Dimension ecran/2");
+		setTitle("Dimension ecran");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		Dimension dimEcran = tk.getScreenSize();
 		int larg = (int) dimEcran.getWidth();

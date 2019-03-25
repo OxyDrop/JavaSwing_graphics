@@ -27,6 +27,7 @@ class Fen2Bouton extends JFrame{
 	public Fen2Bouton(){
 		setTitle("Modif taille boutons");
 		setSize(300,150);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container contenu = getContentPane();
 		contenu.setLayout(new FlowLayout());
 		boutons = new JButton[NBOUTONS];

@@ -15,8 +15,10 @@ class FenActiv extends JFrame implements ActionListener{
 	public FenActiv(){
 		setTitle("Activation/Desactivation");
 		setSize(500,150);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container contenu = getContentPane();
 		contenu.setLayout(new FlowLayout());
+		this.setBackground(Color.black);
 		tabBout = new JButton[NBOUTONS];
 		for(int i=0;i<NBOUTONS;i++){
 			tabBout[i]=new JButton("BOUTON"+i);

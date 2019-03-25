@@ -2,23 +2,29 @@ package javagraphic;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-class Fenetre extends JFrame{
+class Fenetre extends JFrame
+{
 	private JPanel pan;
-	Fenetre(){
+	Fenetre()
+	{
 		setTitle("Traces de clics");
 		setSize(300,150);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pan = new JPanel(); 
 		getContentPane().add(pan); //AJOUT PANNEAU
 		pan.addMouseListener(new EcouteClic(pan)); //AJOUT NOUVEAU EVENEMENT SOURIS 
 	}
 }
-class EcouteClic extends MouseAdapter{
+class EcouteClic extends MouseAdapter
+{
 	private JPanel pan;
 	private String[] name = {"Chocolat","Myrtille","Framboise","Amande","Confiture"};
-	public EcouteClic(JPanel pan){
+	public EcouteClic(JPanel pan)
+	{
 		this.pan=pan;
 	}
-	public void mouseClicked(MouseEvent ev){ //
+	public void mouseClicked(MouseEvent ev)
+	{ //
 		Graphics g = pan.getGraphics(); //PAS DE REDEFINITION DE PAINTCOMPONENT, PAS DE PERMANENCE DES DESSINS, DESSIN A LA VOLEE
 		g.setColor(Color.BLUE);
 		g.drawRect(ev.getX(),ev.getY(),12,12);
@@ -26,8 +32,10 @@ class EcouteClic extends MouseAdapter{
 		g.dispose(); //LIBERATION MEMOIRE
 	}
 }
-public class TraceRect {
-	public static void main(String[] args){
+public class TraceRect 
+{
+	public static void main(String[] args)
+	{
 		Fenetre fen = new Fenetre();
 		fen.setVisible(true);
 	}

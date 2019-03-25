@@ -14,6 +14,7 @@ class FenetreRepaint extends JFrame implements ActionListener{
 	public FenetreRepaint(){
 		setTitle("Exemple appel repaint");	//FENETRE
 		setSize(300,200);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container contenu = getContentPane();//CONTENEUR
 		pan = new PanRepaint();//PANNEAU
 		pan.setBackground(Color.cyan);

@@ -9,14 +9,18 @@ package Threads;
  *
  * @author Acer
  */
-public class ThrChange extends Thread{
+public class ThrChange extends Thread
+{
 	private Nombres nomb;
-	public ThrChange(Nombres nomb){
+	public ThrChange(Nombres nomb)
+	{
 		this.nomb=nomb;
 	}
-	public void run(){
+	public void run()
+	{
 		try{
-			while(!interrupted()){
+			while(!interrupted())
+			{
 				nomb.calcul();
 				sleep(500);
 			}

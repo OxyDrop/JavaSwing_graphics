@@ -1,12 +1,16 @@
 package Threads;
-public class ThrAff extends Thread{
+public class ThrAff extends Thread
+{
 	private Nombres nomb;
-	public ThrAff(Nombres nomb){
+	public ThrAff(Nombres nomb)
+	{
 		this.nomb=nomb;
 	}
-	public void run(){
+	public void run()
+	{
 		try{
-			while(!interrupted()){
+			while(!interrupted())
+			{
 				nomb.affiche();
 				sleep(200);
 			}
