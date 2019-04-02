@@ -25,13 +25,13 @@ public class TablePanel extends JPanel
 		table = new JTable(ptm);
 		jpopm = new JPopupMenu();
 		JMenuItem removeItem = new JMenuItem("Delete row");
-		table.addMouseListener(new MouseAdapter(){
+		table.addMouseListener(new MouseAdapter(){ //Adapter permet d'implementer les classes abstraites au choix et non toutes
 			public void mouseReleased (MouseEvent ev){
 				
-				int row = table.rowAtPoint(ev.getPoint());
-				table.getSelectionModel().setSelectionInterval(row, row);
+				int row = table.rowAtPoint(ev.getPoint()); //recupere la ligne du clic
+				table.getSelectionModel().setSelectionInterval(row, row); //selectionne la ligne
 				
-				if (ev.isPopupTrigger()) jpopm.show(ev.getComponent() ,ev.getX(),ev.getY());
+				if (ev.isPopupTrigger()) jpopm.show(ev.getComponent() ,ev.getX(),ev.getY()); //affiche la JPopMenu
 				//if(ev.getButton() == MouseEvent.BUTTON3) jpopm.show(...)
 		}});
 		
@@ -41,8 +41,10 @@ public class TablePanel extends JPanel
 				int row = table.getSelectedRow();
 			
 				if(ptl!=null)
+				{
 					ptl.rowDeleted(row);
 					ptm.fireTableRowsDeleted(row, row);
+				}
 		}});
 	
 		setLayout(new BorderLayout());

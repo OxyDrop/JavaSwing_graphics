@@ -85,7 +85,8 @@ class MyFen extends JFrame{
 		}});
 		
 		content.add(tbar,"North"); 
-		//content.add(jta,"Center");	
+		content.add(jta,"South");	
+		jta.setPreferredSize(new Dimension(100,50));
 		content.add(jfo,"West");
 		content.add(tablep,"Center");
 	}

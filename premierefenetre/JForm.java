@@ -24,7 +24,8 @@ public class JForm extends JPanel {
 	private JCheckBox jcb0;
 	private final JRadioButton jrm,jrf;
 	private ButtonGroup genderGroup;
-								
+	/* Ce tableau avec jc  et un Inset[] est utile pour ajouter automatiquement des composants au tableau où on le souhaite 
+		gc.gridx,gridy,gridwidth,gridheigth,ipadx,ipady,anchor,fill ; ici seulement gridx, gridy et anchor */
 	private final static int[][] GBC = {{0,0,GLE},{1,0,GLA},{0,1,GLE},{1,1,GLA},{0,2,GLE},
 										{1,2,GLA},{0,3,GLE},{1,3,GLA},{0,4,GLE},{1,4,GLA},
 										{0,5,GLE},{1,5,GLA},{0,6,GLE},{1,6,GCENT},{2,6,GCENT},{1,7,GLFA}};
@@ -110,9 +111,9 @@ public class JForm extends JPanel {
 				if(!isTicked && !(textID.getText().equals("")))
 					textID.setText("");
 			}});
+		
 		GridBagConstraints gc = new GridBagConstraints();
 		gc.fill = GridBagConstraints.HORIZONTAL;
-		
 		for(int i=0;i<GBC.length;i++)
 		{
 			if(i==GBC.length-1)
